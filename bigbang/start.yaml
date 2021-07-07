@@ -12,9 +12,9 @@ metadata:
   namespace: bigbang
 spec:
   interval: 1m
-  url: https://repo1.dso.mil/platform-one/hello-world/big-bang-universe.git
+  url: https://github.com/pkosiec/Quick-Start-Big-Bang.git
   ref:
-    branch: master
+    branch: p1-1.11
 
 ---
 

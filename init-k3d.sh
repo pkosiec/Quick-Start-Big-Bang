@@ -13,6 +13,7 @@ mkdir -p ${IMAGE_CACHE}
 k3d cluster create \
   --volume ${IMAGE_CACHE}:/var/lib/rancher/k3s/agent/containerd/io.containerd.content.v1.content \
   --volume /etc/machine-id:/etc/machine-id \
+  --registry-config registries.yaml \
   --k3s-server-arg "--disable=traefik" \
   -p 80:80@loadbalancer \
   -p 443:443@loadbalancer \
