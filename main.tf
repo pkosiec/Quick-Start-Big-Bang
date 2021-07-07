@@ -1,3 +1,8 @@
+variable "registry1_name" {
+  type = string
+  default = "registry1.dso.mil"
+}
+
 variable "registry1_username" {
   type = string
 }
@@ -19,7 +24,7 @@ module "big_bang" {
 
   big_bang_manifest_file = "bigbang/start.yaml"
   registry_credentials = [{
-    registry = "registry1.dso.mil"
+    registry = var.registry1_name
     username = var.registry1_username
     password = var.registry1_password
   }]
