@@ -11,6 +11,11 @@ variable "reduce_flux_resources" {
   default = true
 }
 
+variable "kube_conf_file" {
+    type    = string
+    default = "~/.kube/config"
+}
+
 output "istio_gw_ip" {
   value = module.big_bang.external_load_balancer.ip
 }
@@ -24,4 +29,5 @@ module "big_bang" {
     password = var.registry1_password
   }]
   reduce_flux_resources = var.reduce_flux_resources
+  kube_conf_file = var.kube_conf_file
 }
