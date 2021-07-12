@@ -36,8 +36,9 @@ istio:
     ingressGateway:
       maxReplicas: 1
       serviceAnnotations:
-        # Ensure mission apps have internal load balancer only
-        service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+        # Expose all apps externally for testing purposes
+        service.beta.kubernetes.io/aws-load-balancer-internal: "false"
+        service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
         # Enable cross zone load balancing
         service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
 
